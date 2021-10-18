@@ -3,8 +3,7 @@ from sympy import primorial, sieve
 
 
 def numerator(n):
-    first_n_primes = list(islice(sieve, n))
-    return sum((primorial(n) // first_n_primes[i] for i in range(n)))
+    return sum((primorial(n) // p for p in islice(sieve, n)))
 
 
 def sequence(n):
