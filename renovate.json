@@ -1,0 +1,33 @@
+{
+    "dependencyDashboard": true,
+    "extends": [
+        "config:base",
+        "docker:enableMajor"
+    ],
+    "lockFileMaintenance": {
+        "automerge": true,
+        "enabled": true
+    },
+    "packageRules": [
+        {
+            "automerge": true,
+            "extends": [
+                "schedule:weekends"
+            ],
+            "groupName": "everything",
+            "matchUpdateTypes": [
+                "bump",
+                "digest",
+                "lockFileMaintenance",
+                "major",
+                "minor",
+                "patch",
+                "pin",
+                "rollback"
+            ]
+        }
+    ],
+    "pinDigests": true,
+    "prCreation": "not-pending",
+    "stabilityDays": 7
+}

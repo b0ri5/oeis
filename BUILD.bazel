@@ -1,0 +1,16 @@
+load("@pip//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_library", "py_test")
+
+py_library(
+    name = "A348301",
+    srcs = ["A348301.py"],
+    deps = [
+        requirement("sympy"),
+    ],
+)
+
+py_test(
+    name = "A348301_test",
+    srcs = ["A348301_test.py"],
+    deps = [":A348301"],
+)
