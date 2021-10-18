@@ -31,7 +31,7 @@ jobs:
     steps:
       - checkout
       - run: pip install pylint
-      - run: find . -name *.py | xargs pylint --disable=missing-docstring --disable=too-many-public-methods
+      - run: find . -name "*.py" | xargs pylint --disable=missing-docstring --disable=too-many-public-methods
   # See https://github.com/google/yapf
   check-yapf:
     docker:
@@ -40,10 +40,10 @@ jobs:
     steps:
       - checkout
       - run: pip install yapf
-      - run: find . -name *.py | xargs yapf --parallel --style google --diff
+      - run: find . -name "*.py" | xargs yapf --parallel --style google --diff
       - run:
           command: |
-            echo "Run find . -name *.py | xargs yapf --parallel --style google --in-place"
+            echo "Run find . -name "*.py" | xargs yapf --parallel --style google --in-place"
           when: on_fail
 
 workflows:
