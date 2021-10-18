@@ -4,4 +4,4 @@ set -e # Exit on error
 
 find . -name "BUILD.bazel" \
   | xargs buildifier --lint=warn --mode=check --warnings=all
-yarn buildifier --lint=warn --mode=check --warnings=all WORKSPACE
+buildifier --lint=warn --mode=check --warnings=all WORKSPACE
