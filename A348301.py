@@ -1,5 +1,3 @@
-import sympy
-
 from itertools import islice
 from sympy import primorial, sieve
 
