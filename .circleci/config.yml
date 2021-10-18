@@ -30,8 +30,10 @@ jobs:
       - image: cimg/python:3.9.7@sha256:9833615c8c454c09f71a629e83507ebdc98d8bc4c69a7c0a567dc89aeac8b3bf
     steps:
       - checkout
+      - run: pip install -r requirements.txt
       - run: pip install pylint
-      - run: find . -name *.py | xargs pylint --disable=missing-docstring --disable=too-many-public-methods
+      # It would be nice to keep invalid-name but it is too convenient to use the oeis sequence and "n"
+      - run: find . -name *.py | xargs pylint --disable=missing-docstring --disable=too-many-public-methods --disable=invalid-name
   # See https://github.com/google/yapf
   check-yapf:
     docker:
