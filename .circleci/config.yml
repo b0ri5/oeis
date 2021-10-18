@@ -15,11 +15,11 @@ jobs:
       - run: bazelisk test --test_output=errors //...
   check-buildifier:
     docker:
-      # See https://circleci.com/developer/images/image/cimg/node for a list of images
-      - image: cimg/node:16.8.0@sha256:4caa18dfb1130e60f25eaf980cb90f92e50f3c40f20ecd95394d5de0567d6c62
+      # See https://circleci.com/developer/images/image/cimg/go for a list of images
+      - image: cimg/go:1.17.2
     steps:
       - checkout
-      - run: yarn install --frozen-lockfile --non-interactive
+      - run: go get github.com/bazelbuild/buildtools/buildifier
       - run: bash .circleci/check_buildifier
       - run:
           command: echo "Run .circleci/fix_buildifier"
@@ -30,8 +30,10 @@ jobs:
       - image: cimg/python:3.9.7@sha256:9833615c8c454c09f71a629e83507ebdc98d8bc4c69a7c0a567dc89aeac8b3bf
     steps:
       - checkout
+      - run: pip install -r requirements.txt
       - run: pip install pylint
-      - run: find . -name "*.py" | xargs pylint --disable=missing-docstring --disable=too-many-public-methods
+      # It would be nice to keep invalid-name but it is too convenient to use the oeis sequence and "n"
+      - run: find . -name "*.py" | xargs pylint --disable=missing-docstring --disable=too-many-public-methods --disable=invalid-name
   # See https://github.com/google/yapf
   check-yapf:
     docker:
