@@ -20,7 +20,7 @@ jobs:
     steps:
       - checkout
       - run: yarn install --frozen-lockfile --non-interactive
-      - run: .circleci/check_buildifier
+      - run: bash .circleci/check_buildifier
       - run:
           command: echo "Run .circleci/fix_buildifier"
           when: on_fail
