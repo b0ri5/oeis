@@ -19,7 +19,7 @@ jobs:
       - image: cimg/go:1.17.2
     steps:
       - checkout
-      - go get github.com/bazelbuild/buildtools/buildifier
+      - run: go get github.com/bazelbuild/buildtools/buildifier
       - run: bash .circleci/check_buildifier
       - run:
           command: echo "Run .circleci/fix_buildifier"
