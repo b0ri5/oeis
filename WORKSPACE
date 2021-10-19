@@ -1,9 +1,3 @@
-# See https://docs.bazel.build/versions/master/build-ref.html#workspace
-workspace(
-    name = "wksp",
-    managed_directories = {"@npm": ["node_modules"]},
-)
-
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # Make python rules available. See https://github.com/bazelbuild/rules_python#getting-started
