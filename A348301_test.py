@@ -5,7 +5,7 @@ from A348301 import numerator, sequence
 
 class Test(unittest.TestCase):
 
-    # See #https://oeis.org/A024451
+    # See https://oeis.org/A024451
     def test_numerator(self):
         self.assertEqual(1, numerator(1))
         self.assertEqual(5, numerator(2))
