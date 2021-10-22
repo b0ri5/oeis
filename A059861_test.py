@@ -1,6 +1,6 @@
 import unittest
 
-from A059861 import brute_force
+from A059861 import brute_force, r_times_r_plus_two
 
 
 class Test(unittest.TestCase):
