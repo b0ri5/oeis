@@ -14,3 +14,17 @@ py_test(
     srcs = ["A348301_test.py"],
     deps = [":A348301"],
 )
+
+py_library(
+    name = "A059861",
+    srcs = ["A059861.py"],
+    deps = [
+        requirement("sympy"),
+    ],
+)
+
+py_test(
+    name = "A059861_test",
+    srcs = ["A059861_test.py"],
+    deps = [":A059861"],
+)
