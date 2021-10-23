@@ -14,7 +14,7 @@ class Test(unittest.TestCase):
         self.assertEqual(135, brute_force(5))
         self.assertEqual(1485, brute_force(6))
 
-    def test_brute_force(self):
+    def test_r_times_r_plus_two(self):
         self.assertEqual(1, r_times_r_plus_two(1))
         self.assertEqual(1, r_times_r_plus_two(2))
         self.assertEqual(3, r_times_r_plus_two(3))
