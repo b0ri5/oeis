@@ -18,7 +18,7 @@ jobs:
   check-buildifier:
     docker:
       # See https://circleci.com/developer/images/image/cimg/go for a list of images
-      - image: cimg/go:1.17.5@sha256:03bc021893b54e1f7c981dc3a391df868a01e24899044d382f068d2014b80348
+      - image: cimg/go:1.18.3@sha256:57a6661c2c9ea2a39d44eaa532f690c274cc632f1cb8fde6a541040294fe7b05
     steps:
       - checkout
       - run: go get github.com/bazelbuild/buildtools/buildifier
@@ -29,7 +29,7 @@ jobs:
   check-python:
     docker:
       # See https://circleci.com/developer/images/image/cimg/python for a list of images
-      - image: cimg/python:3.10.1@sha256:fc682462c99327b5607503c533232d9447e334ba47e3eca0d8b772ae4ef6b0b8
+      - image: cimg/python:3.10.4@sha256:2916aa1ec88f5ca265b8810777cfd40189eef1278aa45b8a6d61e64da4a68686
     steps:
       - checkout
       - run: pip install -r requirements.txt
@@ -40,7 +40,7 @@ jobs:
   check-yapf:
     docker:
       # See https://circleci.com/developer/images/image/cimg/python for a list of images
-      - image: cimg/python:3.10.1@sha256:fc682462c99327b5607503c533232d9447e334ba47e3eca0d8b772ae4ef6b0b8
+      - image: cimg/python:3.10.4@sha256:2916aa1ec88f5ca265b8810777cfd40189eef1278aa45b8a6d61e64da4a68686
     steps:
       - checkout
       - run: pip install yapf
