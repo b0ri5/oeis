@@ -31,7 +31,7 @@ jobs:
   check-python:
     docker:
       # See https://circleci.com/developer/images/image/cimg/python for a list of images
-      - image: cimg/python:3.12.1@sha256:5af7aa5146fa64bf09637b2a81cebec98553df6feb95798ed72dfc80f580158c
+      - image: cimg/python:3.12.1@sha256:f0fcca28a92ab27345aef1adb1da1a3a18a7ef2d93dd08802674662eb46ebb2b
     steps:
       - checkout
       - run: pip install -r requirements_lock.txt
@@ -42,7 +42,7 @@ jobs:
   check-yapf:
     docker:
       # See https://circleci.com/developer/images/image/cimg/python for a list of images
-      - image: cimg/python:3.12.1@sha256:5af7aa5146fa64bf09637b2a81cebec98553df6feb95798ed72dfc80f580158c
+      - image: cimg/python:3.12.1@sha256:f0fcca28a92ab27345aef1adb1da1a3a18a7ef2d93dd08802674662eb46ebb2b
     steps:
       - checkout
       - run: pip install yapf
