@@ -2,6 +2,8 @@
 
 set -e # Exit on error
 
+# Install buildifier via  
+# go install github.com/bazelbuild/buildtools/buildifier@latest
 find . -name "BUILD.bazel" -not -path "./node_modules/*" \
-  | xargs yarn buildifier --lint=fix --mode=fix --warnings=all
-yarn buildifier --lint=fix --mode=fix --warnings=all WORKSPACE
+  | xargs buildifier --lint=fix --mode=fix --warnings=all
+buildifier --lint=fix --mode=fix --warnings=all MODULE.bazel
