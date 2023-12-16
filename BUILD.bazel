@@ -1,11 +1,17 @@
-load("@pip//:requirements.bzl", "requirement")
 load("@rules_python//python:defs.bzl", "py_library", "py_test")
+load("@rules_python//python:pip.bzl", "compile_pip_requirements")
+
+compile_pip_requirements(
+    name = "requirements",
+    src = "requirements.in",
+    requirements_txt = "requirements_lock.txt",
+)
 
 py_library(
     name = "A348301",
     srcs = ["A348301.py"],
     deps = [
-        requirement("sympy"),
+        "@pypi//sympy:pkg",
     ],
 )
 
@@ -19,7 +25,7 @@ py_library(
     name = "A059861",
     srcs = ["A059861.py"],
     deps = [
-        requirement("sympy"),
+        "@pypi//sympy:pkg",
     ],
 )
 
