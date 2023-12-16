@@ -15,7 +15,7 @@ jobs:
       - run: pyenv global 3.11.5
       # Install bazelisk. See https://github.com/bazelbuild/bazelisk#requirements
       - run: go version
-      - run: go install github.com/bazelbuild/bazelisk
+      - run: go install github.com/bazelbuild/bazelisk@latest
       - run: bazelisk test --test_output=errors //...
   check-buildifier:
     docker:
@@ -23,7 +23,7 @@ jobs:
       - image: cimg/go:1.21.5@sha256:6783c5e6bd954c9de7292a70052ee42029c13918305dabfb6ec3f0eaf6e3233a
     steps:
       - checkout
-      - run: go install github.com/bazelbuild/buildtools/buildifier
+      - run: go install github.com/bazelbuild/buildtools/buildifier@latest
       - run: bash .circleci/check_buildifier
       - run:
           command: echo "Run .circleci/fix_buildifier"
