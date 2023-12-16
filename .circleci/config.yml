@@ -34,7 +34,7 @@ jobs:
       - image: cimg/python:3.12.1@sha256:5af7aa5146fa64bf09637b2a81cebec98553df6feb95798ed72dfc80f580158c
     steps:
       - checkout
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements_lock.txt
       - run: pip install pylint
       # It would be nice to keep invalid-name but it is too convenient to use the oeis sequence and "n"
       - run: find . -name "*.py" | xargs pylint --disable=missing-docstring --disable=too-many-public-methods --disable=invalid-name
