@@ -3,7 +3,7 @@ The module for https://github.com/b0ri5/oeis
 """
 
 # https://github.com/bazelbuild/rules_python/releases
-bazel_dep(name = "rules_python", version = "0.32.1")
+bazel_dep(name = "rules_python", version = "0.32.2")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
