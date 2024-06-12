@@ -20,7 +20,7 @@ jobs:
   check-buildifier:
     docker:
       # See https://circleci.com/developer/images/image/cimg/go for a list of images
-      - image: cimg/go:1.22.3@sha256:fec76d11b482c1c73c8e77654cb5850f70e5b3009239371b9f639455546b7b31
+      - image: cimg/go:1.22.4@sha256:791007e0c8d2287bd34c9308acb699bace9ec3ba4494c99f993c6e31cf387910
     steps:
       - checkout
       - run: go install github.com/bazelbuild/buildtools/buildifier@latest
